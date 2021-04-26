@@ -1,5 +1,6 @@
 //
 // Created by Vitaly Tarasuk on 25.04.2021.
+// Original author ref: https://medium.com/@Im_Jimmi/using-opengl-for-2d-graphics-in-a-juce-plug-in-24aa82f634ff
 //
 
 #include "simple_gl_component.h"
