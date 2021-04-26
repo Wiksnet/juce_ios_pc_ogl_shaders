@@ -1,0 +1,49 @@
+#if JUCE_OPENGL_ES
+        // IOS
+        vertexShader =
+                R"(
+            attribute vec4 a_Position;
+            attribute vec4 a_Color;
+
+            varying lowp vec4 frag_Color;
+
+            void main(){
+                frag_Color = a_Color;
+                gl_Position = a_Position;
+            }
+        )";
+
+        fragmentShader =
+                R"(
+            varying lowp vec4 frag_Color;
+
+            void main()
+            {
+                gl_FragColor = frag_Color;
+            }
+        )";
+#else
+        // PC/Mac os
+        vertexShader =
+                R"(
+            attribute vec4 a_Position;
+            attribute vec4 a_Color;
+
+            varying vec4 frag_Color;
+
+            void main(){
+                frag_Color = a_Color;
+                gl_Position = a_Position;
+            }
+        )";
+
+        fragmentShader =
+                R"(
+            varying vec4 frag_Color;
+
+            void main()
+            {
+                gl_FragColor = frag_Color;
+            }
+        )";
+#endif
